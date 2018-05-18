@@ -58,3 +58,12 @@
 [submodule "antigen"]
 	path = antigen
 	url = https://github.com/zsh-users/antigen.git
+[submodule "vim/bundle/vim-tsx"]
+	path = vim/bundle/vim-tsx
+	url = https://github.com/ianks/vim-tsx.git
+[submodule "vim/bundle/schemalang-vim"]
+	path = vim/bundle/schemalang-vim
+	url = https://github.com/Helcaraxan/schemalang-vim
+[submodule "vim/bundle/YouCompleteMe"]
+	path = vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
