@@ -15,7 +15,7 @@ BASE16_SHELL=$HOME/.config/base16-shell/
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$fg[yellow]%}@%{$fg[magenta]%}%m%{$reset_color%}[%~] %{$fg[magenta]%}%
 
-[%(?.%{$fg[green]%}.%{$fg[red]%})%T%{$fg[magenta]%}] -> "
+[%(?.%{$fg[green]%}.%{$fg[red]%})%D{%H:%M}%{$fg[magenta]%}] -> "
 
 autoload -U compinit
 compinit
