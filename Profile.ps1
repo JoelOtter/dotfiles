@@ -8,7 +8,11 @@ function Prompt {
 	Write-Host "$Env:computername" -NoNewline -ForegroundColor Blue
 	Write-Host "[$(Convert-Path $currentDirectory)]" -ForegroundColor White
 	Write-Host "[" -ForegroundColor Blue -NoNewline
-	Write-Host "$dateTime" -ForegroundColor Green -NoNewline
+	If (!$LASTEXITCODE) {
+		Write-Host "$dateTime" -ForegroundColor Green -NoNewline
+	} Else {
+		Write-Host "$dateTime" -ForegroundColor Red -NoNewline
+	}
 	Write-Host "] ->" -ForegroundColor Blue -NoNewline
 	return " "
 }
