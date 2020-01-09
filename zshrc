@@ -3,6 +3,7 @@ source ~/dotfiles/antigen/antigen.zsh
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle ssh-agent
 antigen bundle lukechilds/zsh-nvm
+antigen bundle kubectl
 
 antigen apply
 
@@ -34,6 +35,7 @@ alias ls='ls -G'
 alias tree='tree -C'
 alias tmux='TERM=xterm-256color tmux'
 alias gogo="cd $GOPATH"
+alias did="vim +'normal Go' +'r!date' ~/.did.txt"
 
 function grepr {
   grep -R "$1" .
@@ -45,6 +47,10 @@ function @ {
 
 function gpush {
   git push origin `git rev-parse --abbrev-ref HEAD`
+}
+
+function gpull {
+  git pull origin `git rev-parse --abbrev-ref HEAD`
 }
 
 alias ta="tmux attach-session -t"
