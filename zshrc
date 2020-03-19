@@ -34,6 +34,8 @@ alias gl='git log'
 alias ls='ls -G'
 alias tree='tree -C'
 alias tmux='TERM=xterm-256color tmux'
+alias vim='nvim'
+alias vi='nvim'
 alias did="vim +'normal Go' +'r!date' ~/.did.txt"
 
 function grepr {
