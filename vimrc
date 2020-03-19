@@ -1,4 +1,25 @@
-execute pathogen#infect()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" Plugins
+call plug#begin('~/.vim/plug')
+Plug 'chriskempson/base16-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-signify'
+call plug#end()
+let g:coc_global_extensions = [
+      \'coc-json',
+      \'coc-tsserver',
+      \'coc-yaml',
+      \]
 
 " Colours etc
 syntax on
@@ -18,6 +39,15 @@ filetype indent on
 filetype on
 filetype plugin on
 
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W'],
+      \'x'    : '#(tmux-spotify-info)',
+      \'y'    : ['%Y-%m-%d', '%R'],
+      \'z'    : '#H',
+      \'options' : {'status-justify' : 'left'}}
+
 " Map leader to space bar
 " Leader w saves, leader-q closes tab.
 nnoremap <Space> <nop>
@@ -29,26 +59,20 @@ noremap <Leader>a :set wrap!<CR>
 noremap <Leader>x :Lexplore<CR>
 noremap <Leader>v :vsplit<CR>
 noremap <Leader>r :CommandTTag<CR>
+noremap <Leader>f :Files<CR>
+noremap <Leader>t :GFiles<CR>
 noremap <Leader>h :noh<CR>
 noremap <Leader>g :! /usr/local/bin/ctags -R -f tags .<CR>
+noremap <Leader>s :set spell! spelllang=en_gb<CR>
 nmap <F9> :bp<CR>
 nmap <F10> :bn<CR>
 
 " General plugin config stuff. I use buffers.
+let g:airline_theme='base16'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#show_tabs = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_java_checkers = []
-let g:CommandTTraverseSCM = "pwd" " Cmd-T only traverses current dir down
-let g:jsx_ext_required = 0
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" Specific syntastic bits
-let g:syntastic_c_include_dirs = ['/usr/local/include/SDL2']
-let g:syntastic_cpp_include_dirs = ['/usr/local/include/SDL2']
 
 " netrw stuff
 let g:netrw_banner = 0
@@ -57,11 +81,6 @@ let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 15
 let g:netrw_list_hide = &wildignore
-
-" YCM
-noremap <Leader>yt :YcmCompleter GetType<CR>
-noremap <Leader>yg :YcmCompleter GoTo<CR>
-noremap <Leader>yf :YcmCompleter FixIt<CR>
 
 " Misc
 set laststatus=2
@@ -77,6 +96,10 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 set hidden " stop empty buffers showing in tabline
-set updatetime=250 " some plugins need to refresh fast
+set updatetime=200 " some plugins need to refresh fast
 set hlsearch
 set incsearch
+if has('mouse_sgr')
+  set ttymouse=sgr
+endif
+set noswapfile

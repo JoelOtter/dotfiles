@@ -1,9 +1,9 @@
-source ~/dotfiles/antigen/antigen.zsh
+source ~/.dotfiles/antigen/antigen.zsh
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle ssh-agent
 antigen bundle lukechilds/zsh-nvm
-antigen bundle kubectl
+#antigen bundle kubectl
 
 antigen apply
 
@@ -34,7 +34,6 @@ alias gl='git log'
 alias ls='ls -G'
 alias tree='tree -C'
 alias tmux='TERM=xterm-256color tmux'
-alias gogo="cd $GOPATH"
 alias did="vim +'normal Go' +'r!date' ~/.did.txt"
 
 function grepr {
