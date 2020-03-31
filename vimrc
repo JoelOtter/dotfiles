@@ -14,11 +14,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-signify'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 let g:coc_global_extensions = [
       \'coc-json',
       \'coc-tsserver',
       \'coc-yaml',
+      \'coc-sh',
+      \'coc-go',
       \]
 
 " Colours etc
