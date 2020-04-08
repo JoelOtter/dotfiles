@@ -13,6 +13,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-signify'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
@@ -55,20 +56,68 @@ let g:tmuxline_preset = {
 " Leader w saves, leader-q closes tab.
 nnoremap <Space> <nop>
 let mapleader=" "
-noremap <Leader>w :update<CR>
-noremap <Leader>q :bp\|bd #<CR>
-noremap <Leader>e :e<CR>
-noremap <Leader>a :set wrap!<CR>
-noremap <Leader>x :Lexplore<CR>
-noremap <Leader>v :vsplit<CR>
-noremap <Leader>r :CommandTTag<CR>
-noremap <Leader>f :Files<CR>
-noremap <Leader>t :GFiles<CR>
-noremap <Leader>h :noh<CR>
-noremap <Leader>g :! /usr/local/bin/ctags -R -f tags .<CR>
-noremap <Leader>s :set spell! spelllang=en_gb<CR>
+noremap <Leader>w   :update<CR>
+noremap <Leader>q   :bp\|bd #<CR>
+noremap <Leader>e   :e<CR>
+noremap <Leader>a   :set wrap!<CR>
+noremap <Leader>x   :Lexplore<CR>
+noremap <Leader>v   :vsplit<CR>
+noremap <Leader>y   :Files<CR>
+noremap <Leader>t   :GFiles<CR>
+noremap <Leader>r   :Vista finder<CR>
+noremap <Leader>h   :noh<CR>
+noremap <Leader>s   :set spell! spelllang=en_gb<CR>
+noremap <Leader>gt  :GoTest<CR>
+noremap <Leader>gtf :GoTestFunc<CR>
+nmap <F8> :Vista!!<CR>
 nmap <F9> :bp<CR>
 nmap <F10> :bn<CR>
+
+""
+" coc settings
+""
+set signcolumn=yes
+set cmdheight=2
+set shortmess+=c
+set hidden
+
+" tab completion
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+if has('patch8.1.1068')
+  " Use `complete_info` if your (Neo)Vim version supports it.
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+nmap <Leader>ca <Plug>(coc-codeaction)
+xmap <leader>ca <Plug>(coc-codeaction-selected)
+xmap <Leader>cf <Plug>(coc-format-selected)
+nmap <Leader>cf <Plug>(coc-format-selected)
+nmap <Leader>cg <Plug>(coc-fix-current)
+nmap <Leader>cr <Plug>(coc-rename)
+nmap <Leader>c] <Plug>(coc-definition)
+
+nnoremap <silent> <Leader>cd  :<C-u>CocList diagnostics<CR>
+
+let g:vista_default_executive = 'coc'
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_fzf_preview = ['right:50%']
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
 " General plugin config stuff. I use buffers.
 let g:airline_theme='base16'
