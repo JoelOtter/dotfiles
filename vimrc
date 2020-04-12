@@ -72,6 +72,7 @@ noremap <Leader>gtf :GoTestFunc<CR>
 nmap <F8> :Vista!!<CR>
 nmap <F9> :bp<CR>
 nmap <F10> :bn<CR>
+nmap <TAB> :Vista finder<CR>
 
 ""
 " coc settings
@@ -111,6 +112,7 @@ nmap <Leader>cf <Plug>(coc-format-selected)
 nmap <Leader>cg <Plug>(coc-fix-current)
 nmap <Leader>cr <Plug>(coc-rename)
 nmap <Leader>c] <Plug>(coc-definition)
+nmap <Leader>c[ <Plug>(coc-references)
 
 nnoremap <silent> <Leader>cd  :<C-u>CocList diagnostics<CR>
 
