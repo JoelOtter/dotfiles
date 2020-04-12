@@ -64,7 +64,7 @@ noremap <Leader>x   :Lexplore<CR>
 noremap <Leader>v   :vsplit<CR>
 noremap <Leader>y   :Files<CR>
 noremap <Leader>t   :GFiles<CR>
-noremap <Leader>r   :Vista finder<CR>
+noremap <Leader>r   :CocList symbols<CR>
 noremap <Leader>h   :noh<CR>
 noremap <Leader>s   :set spell! spelllang=en_gb<CR>
 noremap <Leader>gt  :GoTest<CR>
@@ -111,8 +111,8 @@ xmap <Leader>cf <Plug>(coc-format-selected)
 nmap <Leader>cf <Plug>(coc-format-selected)
 nmap <Leader>cg <Plug>(coc-fix-current)
 nmap <Leader>cr <Plug>(coc-rename)
-nmap <Leader>c] <Plug>(coc-definition)
-nmap <Leader>c[ <Plug>(coc-references)
+nmap <C-]> <Plug>(coc-definition)
+nmap <Leader>c] <Plug>(coc-references)
 
 nnoremap <silent> <Leader>cd  :<C-u>CocList diagnostics<CR>
 
