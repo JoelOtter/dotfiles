@@ -16,6 +16,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'liuchengxu/vista.vim'
 Plug 'mhinz/vim-signify'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'tpope/vim-fugitive'
+Plug 'towolf/vim-helm'
 call plug#end()
 let g:coc_global_extensions = [
       \'coc-json',

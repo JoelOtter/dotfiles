@@ -1,5 +1,7 @@
 source ~/.dotfiles/antigen/antigen.zsh
 
+eval "$(direnv hook zsh)"
+
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle ssh-agent
 antigen bundle lukechilds/zsh-nvm
@@ -57,6 +59,11 @@ function gpull {
 alias ta="tmux attach-session -t"
 
 alias tl='tmux ls'
+
+# Keybinds
+bindkey "^[[3~" delete-char
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
 
 source ~/.zshrc-local
 
