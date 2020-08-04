@@ -56,6 +56,10 @@ function gpull {
   git pull origin `git rev-parse --abbrev-ref HEAD`
 }
 
+function gupd {
+  git fetch origin "$1:$1"
+}
+
 alias ta="tmux attach-session -t"
 
 alias tl='tmux ls'
@@ -64,6 +68,10 @@ alias tl='tmux ls'
 bindkey "^[[3~" delete-char
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+
+export HISTSIZE=1024
+export HISTFILESIZE=1024
+export HISTFILE=~/.zhistory # Don't forget to to set this also
 
 source ~/.zshrc-local
 

@@ -71,6 +71,7 @@ noremap <Leader>h   :noh<CR>
 noremap <Leader>s   :set spell! spelllang=en_gb<CR>
 noremap <Leader>gt  :GoTest<CR>
 noremap <Leader>gtf :GoTestFunc<CR>
+noremap <Leader>=   <C-w>=
 nmap <F8> :Vista!!<CR>
 nmap <F9> :bp<CR>
 nmap <F10> :bn<CR>
@@ -159,3 +160,4 @@ if has('mouse_sgr')
   set ttymouse=sgr
 endif
 set noswapfile
+set colorcolumn=81
