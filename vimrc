@@ -45,12 +45,14 @@ filetype indent on
 filetype on
 filetype plugin on
 
+" To make changes, reenable this, snapshot and disable again.
+let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_preset = {
       \'a'    : '#S',
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W'],
       \'x'    : '#(tmux-spotify-info)',
-      \'y'    : ['%Y-%m-%d', '%R'],
+      \'y'    : ['#{battery_icon} #{battery_percentage} ﬙ #{cpu_percentage}  #{ram_percentage}', '%Y-%m-%d', '%R'],
       \'z'    : '#H',
       \'options' : {'status-justify' : 'left'}}
 
