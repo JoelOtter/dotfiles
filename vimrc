@@ -26,6 +26,7 @@ let g:coc_global_extensions = [
       \'coc-sh',
       \'coc-go',
       \'coc-pyright',
+      \'coc-java',
       \]
 
 " Colours etc
@@ -164,3 +165,5 @@ if has('mouse_sgr')
 endif
 set noswapfile
 set colorcolumn=81
+
+autocmd FileType cpp,c,objc,objcpp,cmake setlocal noexpandtab
