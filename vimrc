@@ -80,6 +80,7 @@ nmap <F8> :Vista!!<CR>
 nmap <F9> :bp<CR>
 nmap <F10> :bn<CR>
 nmap <TAB> :Vista finder<CR>
+nmap <F1> <NOP>
 
 ""
 " coc settings
