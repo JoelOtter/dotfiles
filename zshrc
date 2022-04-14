@@ -79,6 +79,8 @@ bindkey "^[[4~" end-of-line
 export HISTSIZE=1024
 export HISTFILESIZE=1024
 export HISTFILE=~/.zhistory # Don't forget to to set this also
+export EDITOR=nvim
+bindkey -e
 
 source ~/.zshrc-local
 
