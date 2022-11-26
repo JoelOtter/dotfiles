@@ -5,33 +5,13 @@ local dpi = xresources.apply_dpi
 
 local gfs = require("gears.filesystem")
 local themes_path = gfs.get_themes_dir()
-
-local colors = {
-    black =   '#263238',
-    red =     '#ec5f67',
-    green =   '#8bd649',
-    yellow =  '#ffcc00',
-    blue =    '#89ddff',
-    magenta = '#82aaff',
-    cyan =    '#80cbc4',
-    white =   '#cdd3de',
-    bright_black =   '#707880',
-    bright_red =     '#ea9560',
-    bright_green =   '#2c393f',
-    bright_yellow =  '#37474f',
-    bright_blue =    '#c9ccd3',
-    bright_magenta = '#d5dbe5',
-    bright_cyan =    '#ec5f67',
-    bright_white =   '#ffffff',
-    clear = '#00000000'
-}
+local colors = require('colors')
 
 local theme = {}
 
-local font = "SauceCodePro Nerd Font 10"
-local bold_font = "SauceCodePro Nerd Font Bold 10"
+theme.font = "SauceCodePro Nerd Font 10"
+theme.bold_font = "SauceCodePro Nerd Font Bold 10"
 
-theme.font          = font
 theme.bg_normal     = colors.black
 theme.bg_focus      = colors.black
 theme.bg_urgent     = colors.red
@@ -46,14 +26,15 @@ theme.fg_focus      = colors.bright_white
 theme.fg_urgent     = colors.bright_white
 theme.fg_minimize   = colors.bright_white
 
-theme.tasklist_font_focus = bold_font
+theme.tasklist_font_focus = theme.bold_font
 theme.tasklist_bg_normal = colors.black
 
 theme.useless_gap         = dpi(10)
 theme.border_width        = dpi(1)
 theme.border_color_normal = colors.black
 theme.border_color_active = colors.blue
-theme.border_color_marked = colors.green
+theme.border_color_marked = colors.yellow
+theme.border_color_floating = colors.green
 
 theme.top_bar = {
     gaps = theme.useless_gap * 2,
