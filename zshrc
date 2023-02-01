@@ -1,19 +1,21 @@
 source ~/.dotfiles/antigen/antigen.zsh
 
+export PATH="/opt/homebrew/bin:$PATH"
+
 eval "$(direnv hook zsh)"
 
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle ssh-agent
 antigen bundle lukechilds/zsh-nvm
+antigen bundle chriskempson/base16-shell
 #antigen bundle kubectl
 
 antigen apply
 
+base16_materia
+
 setopt inc_append_history
 setopt share_history
-
-BASE16_SHELL=$HOME/.config/base16-shell/
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 autoload -U colors && colors
 PS1="%{$fg[red]%}%n%{$fg[yellow]%}@%{$fg[magenta]%}%m%{$reset_color%}[%~] %{$fg[magenta]%}%
