@@ -35,6 +35,7 @@ if exists('$BASE16_THEME')
       \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
     let base16colorspace=256
     colorscheme base16-$BASE16_THEME
+    hi! CocMenuSel ctermbg=Black
 endif
 
 " General appearance tings - numbers and cursor etc
@@ -160,6 +161,5 @@ if has('mouse_sgr')
 endif
 set noswapfile
 set colorcolumn=81
-set termguicolors
 
 autocmd FileType cpp,c,objc,objcpp,cmake setlocal noexpandtab
