@@ -27,6 +27,8 @@ let g:coc_global_extensions = [
       \'coc-go',
       \'coc-pyright',
       \'coc-java',
+      \'coc-cmake',
+      \'coc-lua',
       \]
 
 " Colours etc
