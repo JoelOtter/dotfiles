@@ -52,7 +52,7 @@ theme.taglist_squares_unsel = theme_assets.taglist_squares_unsel(
     taglist_square_size, theme.fg_normal
 )
 
-theme.wallpaper = "/usr/share/backgrounds/gnome/adwaita-d.webp"
+theme.wallpaper = "~/.wallpaper"
 
 -- You can use your own layout icons like this:
 theme.layout_fairh = themes_path.."default/layouts/fairhw.png"
@@ -74,7 +74,7 @@ theme.layout_cornerse = themes_path.."default/layouts/cornersew.png"
 
 -- Define the icon theme for application icons. If not set then the icons
 -- from /usr/share/icons and /usr/share/icons/hicolor will be used.
-theme.icon_theme = nil
+theme.icon_theme = 'ePapirus-Dark'
 
 -- Set different colors for urgent notifications.
 rnotification.connect_signal('request::rules', function()

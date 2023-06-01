@@ -69,6 +69,12 @@ screen.connect_signal("request::desktop_decoration", function(s)
   -- Each screen has its own tag table.
   awful.tag({ "一つ", "二つ", "三つ", "四つ", "五つ" }, s, awful.layout.layouts[1])
 
+  local menubar = require('menubar')
+  menubar.geometry.x = beautiful.top_bar.gaps
+  menubar.geometry.y = beautiful.top_bar.gaps
+  menubar.geometry.height = beautiful.top_bar.height
+  menubar.geometry.width = s.geometry.width - beautiful.top_bar.gaps * 2
+
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
 
