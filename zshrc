@@ -48,6 +48,7 @@ alias tmux='TERM=xterm-256color tmux'
 alias vim='nvim'
 alias vi='nvim'
 alias did="vim +'normal Go' +'r!date' ~/.did.txt"
+alias nj='ninja'
 
 function grepr {
   grep -R "$1" .
