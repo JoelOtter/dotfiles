@@ -57,7 +57,7 @@ let g:tmuxline_preset = {
       \'win'  : ['#I', '#W'],
       \'cwin' : ['#I', '#W'],
       \'x'    : '#(tmux-spotify-info)',
-      \'y'    : ['#{battery_icon} #{battery_percentage} ﬙ #{cpu_percentage}  #{ram_percentage}', '%Y-%m-%d', '%R'],
+      \'y'    : ['#{battery_icon} #{battery_percentage} 󰘚 #{cpu_percentage} 󰍛 #{ram_percentage}', '%Y-%m-%d', '%R'],
       \'z'    : '#H',
       \'options' : {'status-justify' : 'left'}}
 
