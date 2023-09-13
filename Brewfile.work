@@ -1,0 +1,11 @@
+brew "awscli"
+brew "graphviz"
+brew "mongosh"
+brew "openvpn"
+brew "postgresql@14"
+brew "pre-commit"
+brew "terraform"
+
+cask "google-cloud-sdk"
+cask "loom"
+cask "slack"
