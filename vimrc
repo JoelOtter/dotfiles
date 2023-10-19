@@ -18,6 +18,8 @@ Plug 'mhinz/vim-signify'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'tpope/vim-fugitive'
 Plug 'towolf/vim-helm'
+Plug 'lluchs/vim-wren'
+Plug 'junegunn/goyo.vim'
 call plug#end()
 let g:coc_global_extensions = [
       \'coc-json',
@@ -76,9 +78,8 @@ noremap <Leader>t   :GFiles<CR>
 noremap <Leader>r   :CocList symbols<CR>
 noremap <Leader>h   :noh<CR>
 noremap <Leader>s   :set spell! spelllang=en_gb<CR>
-noremap <Leader>gt  :GoTest<CR>
-noremap <Leader>gtf :GoTestFunc<CR>
 noremap <Leader>=   <C-w>=
+noremap <Leader>g   :Goyo<CR>
 nmap <F8> :Vista!!<CR>
 nmap <F9> :bp<CR>
 nmap <F10> :bn<CR>
