@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'towolf/vim-helm'
 Plug 'lluchs/vim-wren'
 Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 call plug#end()
 let g:coc_global_extensions = [
       \'coc-json',
@@ -142,6 +143,8 @@ let g:netrw_altv = 1
 let g:netrw_winsize = 15
 let g:netrw_list_hide = &wildignore
 
+let g:goyo_width=81
+
 " Misc
 set laststatus=2
 set mouse=a
@@ -164,5 +167,28 @@ if has('mouse_sgr')
 endif
 set noswapfile
 set colorcolumn=81
+set scrolloff=5
 
 autocmd FileType cpp,c,objc,objcpp,cmake setlocal noexpandtab
+
+" Goyo
+function! s:goyo_enter()
+  set noshowmode
+  set scrolloff=999
+  set linebreak
+  set textwidth=80
+  CocDisable
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  set showmode
+  set scrolloff=5
+  set nolinebreak
+  set textwidth=0
+  CocEnable
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
