@@ -157,7 +157,6 @@ set clipboard=unnamed
 set backspace=2
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-set showmode
 set hidden " stop empty buffers showing in tabline
 set updatetime=200 " some plugins need to refresh fast
 set hlsearch
@@ -173,7 +172,6 @@ autocmd FileType cpp,c,objc,objcpp,cmake setlocal noexpandtab
 
 " Goyo
 function! s:goyo_enter()
-  set noshowmode
   set scrolloff=999
   set linebreak
   set textwidth=80
@@ -182,7 +180,6 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
-  set showmode
   set scrolloff=5
   set nolinebreak
   set textwidth=0
