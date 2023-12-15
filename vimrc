@@ -146,27 +146,9 @@ let g:netrw_list_hide = &wildignore
 let g:goyo_width=81
 
 " Misc
-set laststatus=2
-set mouse=a
-set smarttab
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set clipboard=unnamed
-set backspace=2
 nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
-set hidden " stop empty buffers showing in tabline
-set updatetime=200 " some plugins need to refresh fast
-set hlsearch
-set incsearch
-if has('mouse_sgr')
-  set ttymouse=sgr
-endif
-set noswapfile
-set colorcolumn=81
-set scrolloff=5
+lua require('user.settings')
 
 autocmd FileType cpp,c,objc,objcpp,cmake setlocal noexpandtab
 
