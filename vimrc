@@ -44,8 +44,6 @@ if exists('$BASE16_THEME')
 endif
 
 " General appearance tings - numbers and cursor etc
-set number
-set cursorline
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
@@ -66,7 +64,6 @@ let g:tmuxline_preset = {
 
 " Map leader to space bar
 " Leader w saves, leader-q closes tab.
-nnoremap <Space> <nop>
 let mapleader=" "
 noremap <Leader>w   :update<CR>
 noremap <Leader>q   :bp\|bd #<CR>

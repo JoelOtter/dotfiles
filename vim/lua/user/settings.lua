@@ -12,6 +12,8 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.colorcolumn = "81"
 vim.opt.scrolloff = 5
 vim.opt.hidden = true
+vim.opt.number = true
+vim.opt.cursorline = true
 
 -- Search
 vim.opt.incsearch = true
