@@ -4,24 +4,28 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+lua require('user.settings')
+lua require('user.mappings')
+lua require('user.plugins')
+
 " Plugins
-call plug#begin('~/.vim/plug')
-Plug 'chriskempson/base16-vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/fzf', { 'do': './install --bin' }
-Plug 'junegunn/fzf.vim'
-Plug 'liuchengxu/vista.vim'
-Plug 'mhinz/vim-signify'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'tpope/vim-fugitive'
-Plug 'towolf/vim-helm'
-Plug 'lluchs/vim-wren'
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-call plug#end()
+"call plug#begin('~/.vim/plug')
+"Plug 'chriskempson/base16-vim'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'edkolev/tmuxline.vim'
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'junegunn/fzf', { 'do': './install --bin' }
+"Plug 'junegunn/fzf.vim'
+"Plug 'liuchengxu/vista.vim'
+"Plug 'mhinz/vim-signify'
+"Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+"Plug 'tpope/vim-fugitive'
+"Plug 'towolf/vim-helm'
+"Plug 'lluchs/vim-wren'
+"Plug 'junegunn/goyo.vim'
+"Plug 'junegunn/limelight.vim'
+"call plug#end()
 let g:coc_global_extensions = [
       \'coc-json',
       \'coc-tsserver',
@@ -34,22 +38,10 @@ let g:coc_global_extensions = [
       \'coc-lua',
       \]
 
-" Colours etc
-syntax on
-if exists('$BASE16_THEME')
-      \ && (!exists('g:colors_name') || g:colors_name != 'base16-$BASE16_THEME')
-    let base16colorspace=256
-    colorscheme base16-$BASE16_THEME
-    hi! CocMenuSel ctermbg=Black
-endif
-
 " General appearance tings - numbers and cursor etc
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-filetype indent on
-filetype on
-filetype plugin on
 
 " To make changes, reenable this, snapshot and disable again.
 let g:airline#extensions#tmuxline#enabled = 0
@@ -62,52 +54,12 @@ let g:tmuxline_preset = {
       \'z'    : '#H',
       \'options' : {'status-justify' : 'left'}}
 
-" Map leader to space bar
-" Leader w saves, leader-q closes tab.
-let mapleader=" "
-noremap <Leader>w   :update<CR>
-noremap <Leader>q   :bp\|bd #<CR>
-noremap <Leader>e   :e<CR>
-noremap <Leader>a   :set wrap!<CR>
-noremap <Leader>x   :Lexplore<CR>
-noremap <Leader>v   :vsplit<CR>
 noremap <Leader>y   :Files<CR>
 noremap <Leader>t   :GFiles<CR>
 noremap <Leader>r   :CocList symbols<CR>
-noremap <Leader>h   :noh<CR>
-noremap <Leader>s   :set spell! spelllang=en_gb<CR>
-noremap <Leader>=   <C-w>=
 noremap <Leader>g   :Goyo<CR>
 nmap <F8> :Vista!!<CR>
-nmap <F9> :bp<CR>
-nmap <F10> :bn<CR>
 nmap <TAB> :Vista finder<CR>
-nmap <F1> <NOP>
-
-""
-" coc settings
-""
-set signcolumn=yes
-set cmdheight=2
-set shortmess+=c
-set hidden
-
-" tab completion
-inoremap <silent><expr> <TAB>
-      \ coc#pum#visible() ? coc#pum#next(1) :
-      \ CheckBackspace() ? "\<Tab>" :
-      \ coc#refresh()
-inoremap <silent><expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> to trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
 
 nmap <Leader>ca <Plug>(coc-codeaction)
 xmap <leader>ca <Plug>(coc-codeaction-selected)
@@ -142,10 +94,6 @@ let g:netrw_list_hide = &wildignore
 
 let g:goyo_width=81
 
-" Misc
-nnoremap <F2> :set invpaste paste?<CR>
-set pastetoggle=<F2>
-lua require('user.settings')
 
 autocmd FileType cpp,c,objc,objcpp,cmake setlocal noexpandtab
 

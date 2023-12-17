@@ -14,6 +14,10 @@ vim.opt.scrolloff = 5
 vim.opt.hidden = true
 vim.opt.number = true
 vim.opt.cursorline = true
+vim.opt.signcolumn = "number"
+vim.opt.cmdheight = 2
+vim.opt.shortmess:append("c")
+vim.opt.termguicolors = true
 
 -- Search
 vim.opt.incsearch = true
