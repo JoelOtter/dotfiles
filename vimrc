@@ -54,8 +54,6 @@ let g:tmuxline_preset = {
       \'z'    : '#H',
       \'options' : {'status-justify' : 'left'}}
 
-noremap <Leader>y   :Files<CR>
-noremap <Leader>t   :GFiles<CR>
 noremap <Leader>r   :CocList symbols<CR>
 noremap <Leader>g   :Goyo<CR>
 nmap <F8> :Vista!!<CR>
