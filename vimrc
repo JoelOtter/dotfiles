@@ -64,23 +64,3 @@ let g:airline#extensions#tabline#show_tabs = 0
 
 
 autocmd FileType cpp,c,objc,objcpp,cmake setlocal noexpandtab
-
-" Goyo
-function! s:goyo_enter()
-  set scrolloff=999
-  set linebreak
-  set textwidth=80
-  CocDisable
-  Limelight
-endfunction
-
-function! s:goyo_leave()
-  set scrolloff=5
-  set nolinebreak
-  set textwidth=0
-  CocEnable
-  Limelight!
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
