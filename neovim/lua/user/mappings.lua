@@ -20,7 +20,6 @@ bind('', '<Leader>h', ':noh<CR>')
 -- Window
 bind('', '<Leader>v', ':vsplit<CR>')
 bind('', '<Leader>=', '<C-w>=')
-bind('', '<Leader>x', ':Lexplore<CR>')
 bind('', '<Leader>c', '<C-w>c')
 
 -- Disable help on F1
