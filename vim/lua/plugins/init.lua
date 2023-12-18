@@ -1,5 +1,6 @@
 local Plugins = {
-  {'tpope/vim-fugitive'}
+  {'tpope/vim-fugitive'},
+  {'towolf/vim-helm'}
 }
 
 return Plugins
