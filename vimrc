@@ -24,11 +24,6 @@ let g:coc_global_extensions = [
       \'coc-lua',
       \]
 
-" General appearance tings - numbers and cursor etc
-let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
-let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
 " To make changes, reenable this, snapshot and disable again.
 let g:airline#extensions#tmuxline#enabled = 0
 let g:tmuxline_preset = {

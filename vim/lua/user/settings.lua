@@ -18,6 +18,7 @@ vim.opt.signcolumn = "number"
 vim.opt.cmdheight = 2
 vim.opt.shortmess:append("c")
 vim.opt.termguicolors = true
+vim.opt.guicursor = "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50"
 
 -- Search
 vim.opt.incsearch = true
