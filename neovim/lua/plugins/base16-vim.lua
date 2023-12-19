@@ -1,4 +1,4 @@
-local Plugin = {'chriskempson/base16-vim'}
+local Plugin = { 'chriskempson/base16-vim' }
 
 function Plugin.init()
   vim.cmd [[

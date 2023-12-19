@@ -1,13 +1,13 @@
-local Plugin = {'nvim-tree/nvim-tree.lua'}
+local Plugin = { 'nvim-tree/nvim-tree.lua' }
 
 Plugin.lazy = false
 
 Plugin.dependencies = {
-  {'nvim-tree/nvim-web-devicons'}
+  { 'nvim-tree/nvim-web-devicons' }
 }
 
 Plugin.keys = {
-  {'<leader>x', ':NvimTreeToggle<cr>'}
+  { '<leader>x', ':NvimTreeToggle<cr>' }
 }
 
 function Plugin.init()

@@ -1,21 +1,21 @@
-local Plugin = {'hrsh7th/nvim-cmp'}
+local Plugin = { 'hrsh7th/nvim-cmp' }
 
 Plugin.dependencies = {
   -- Sources
-  {'hrsh7th/cmp-buffer'},
-  {'hrsh7th/cmp-path'},
-  {'hrsh7th/cmp-nvim-lsp'},
-  {'hrsh7th/cmp-nvim-lua'},
-  {'saadparwaiz1/cmp_luasnip'},
+  { 'hrsh7th/cmp-buffer' },
+  { 'hrsh7th/cmp-path' },
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'hrsh7th/cmp-nvim-lua' },
+  { 'saadparwaiz1/cmp_luasnip' },
   -- Snippets
-  {'L3MON4D3/LuaSnip'},
+  { 'L3MON4D3/LuaSnip' },
 }
 
 function Plugin.config()
   local cmp = require('cmp')
   local luasnip = require('luasnip')
 
-  vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+  vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 
   local has_words_before = function()
     unpack = unpack or table.unpack
@@ -25,10 +25,10 @@ function Plugin.config()
 
   cmp.setup({
     sources = {
-      {name = 'path'},
-      {name = 'nvim_lsp', keyword_length = 1},
-      {name = 'buffer', keyword_length = 3},
-      {name = 'luasnip', keyword_length = 2}
+      { name = 'path' },
+      { name = 'nvim_lsp', keyword_length = 1 },
+      { name = 'buffer',   keyword_length = 3 },
+      { name = 'luasnip',  keyword_length = 2 }
     },
     snippet = {
       expand = function(args)
@@ -36,7 +36,7 @@ function Plugin.config()
       end,
     },
     formatting = {
-      fields = {'menu', 'abbr', 'kind'},
+      fields = { 'menu', 'abbr', 'kind' },
       format = function(entry, item)
         local menu_icon = {
           nvim_lsp = 'λ',
@@ -51,7 +51,7 @@ function Plugin.config()
     },
     mapping = cmp.mapping.preset.insert({
       -- Enter key confirms completion item
-      ['<CR>'] = cmp.mapping.confirm({select = false}),
+      ['<CR>'] = cmp.mapping.confirm({ select = false }),
 
       ['<C-e>'] = cmp.mapping.abort(),
 
@@ -61,8 +61,8 @@ function Plugin.config()
       ["<Tab>"] = cmp.mapping(function(fallback)
         if cmp.visible() then
           cmp.select_next_item()
-        -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable() 
-        -- that way you will only jump inside the snippet region
+          -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+          -- that way you will only jump inside the snippet region
         elseif luasnip.expand_or_jumpable() then
           luasnip.expand_or_jump()
         elseif has_words_before() then
@@ -92,13 +92,14 @@ function Plugin.config()
     })
   end
 
-  sign({name = 'DiagnosticSignError', text = '✘'})
-  sign({name = 'DiagnosticSignWarn', text = '▲'})
-  sign({name = 'DiagnosticSignHint', text = '⚑'})
-  sign({name = 'DiagnosticSignInfo', text = '»'})
+  sign({ name = 'DiagnosticSignError', text = '✘' })
+  sign({ name = 'DiagnosticSignWarn', text = '▲' })
+  sign({ name = 'DiagnosticSignHint', text = '⚑' })
+  sign({ name = 'DiagnosticSignInfo', text = '»' })
 
   vim.diagnostic.config({
     virtual_text = false,
+    underline = true,
     severity_sort = true,
     update_in_insert = true,
   })

@@ -1,7 +1,7 @@
-local Plugin = {'junegunn/fzf.vim'}
+local Plugin = { 'junegunn/fzf.vim' }
 
 Plugin.dependencies = {
-  {'junegunn/fzf'}
+  { 'junegunn/fzf' }
 }
 
 function Plugin.init()

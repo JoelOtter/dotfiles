@@ -1,6 +1,6 @@
 -- Bind options
 local bind = vim.keymap.set
-local remap = {remap = true}
+local remap = { remap = true }
 
 -- Leader
 vim.g.mapleader = ' '

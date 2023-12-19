@@ -1,7 +1,7 @@
-local Plugin = {'L3MON4D3/LuaSnip'}
+local Plugin = { 'L3MON4D3/LuaSnip' }
 
 Plugin.dependencies = {
-  {'rafamadriz/friendly-snippets'}
+  { 'rafamadriz/friendly-snippets' }
 }
 
 Plugin.lazy = true

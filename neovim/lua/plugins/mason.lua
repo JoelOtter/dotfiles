@@ -1,4 +1,4 @@
-local Plugin = {'williamboman/mason.nvim'}
+local Plugin = { 'williamboman/mason.nvim' }
 
 Plugin.lazy = false
 

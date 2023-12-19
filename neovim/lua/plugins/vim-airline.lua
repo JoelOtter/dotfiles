@@ -1,7 +1,7 @@
-local Plugin = {'vim-airline/vim-airline'}
+local Plugin = { 'vim-airline/vim-airline' }
 
 Plugin.dependencies = {
-  {'vim-airline/vim-airline-themes'}
+  { 'vim-airline/vim-airline-themes' }
 }
 
 function Plugin.init()

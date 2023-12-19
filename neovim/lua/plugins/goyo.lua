@@ -1,11 +1,11 @@
-local Plugin = {'junegunn/goyo.vim'}
+local Plugin = { 'junegunn/goyo.vim' }
 
 Plugin.dependencies = {
-  {'junegunn/limelight.vim'}
+  { 'junegunn/limelight.vim' }
 }
 
 Plugin.keys = {
-  {'<leader>g', ':Goyo<cr>'}
+  { '<leader>g', ':Goyo<cr>' }
 }
 
 function Plugin.init()
@@ -27,10 +27,10 @@ function Plugin.init()
     vim.cmd('Limelight!')
   end
 
-  local augroup = vim.api.nvim_create_augroup('goyo_cmds', {clear = true})
+  local augroup = vim.api.nvim_create_augroup('goyo_cmds', { clear = true })
   local autocmd = vim.api.nvim_create_autocmd
-  autocmd('User', {pattern = 'GoyoEnter', group = augroup, callback = enter})
-  autocmd('User', {pattern = 'GoyoLeave', group = augroup, callback = leave})
+  autocmd('User', { pattern = 'GoyoEnter', group = augroup, callback = enter })
+  autocmd('User', { pattern = 'GoyoLeave', group = augroup, callback = leave })
 end
 
 return Plugin

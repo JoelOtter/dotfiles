@@ -1,14 +1,13 @@
-local Plugin = {'neovim/nvim-lspconfig'}
+local Plugin = { 'neovim/nvim-lspconfig' }
 
 Plugin.lazy = false
 
 Plugin.dependencies = {
-  {'hrsh7th/cmp-nvim-lsp'},
-  {'williamboman/mason-lspconfig.nvim'},
+  { 'hrsh7th/cmp-nvim-lsp' },
+  { 'williamboman/mason-lspconfig.nvim' },
 }
 
 function Plugin.config()
-
   local lspconfig = require('lspconfig')
   local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
   local default_setup = function(server)
@@ -20,13 +19,13 @@ function Plugin.config()
   require('mason').setup()
   require('mason-lspconfig').setup({
     ensure_installed = {},
-    handlers = {default_setup},
+    handlers = { default_setup },
   })
   vim.api.nvim_create_autocmd('LspAttach', {
     desc = 'LSP actions',
     callback = function()
       local bufmap = function(mode, lhs, rhs)
-        local opts = {buffer = true}
+        local opts = { buffer = true }
         vim.keymap.set(mode, lhs, rhs, opts)
       end
 
@@ -65,9 +64,11 @@ function Plugin.config()
 
       -- Move to the next diagnostic
       bufmap('n', '<Leader>]', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+
+      -- Format
+      bufmap({ 'n', 'v' }, '<Leader>lf', '<cmd>lua vim.lsp.buf.format()<cr>')
     end
   })
-
 end
 
 return Plugin
