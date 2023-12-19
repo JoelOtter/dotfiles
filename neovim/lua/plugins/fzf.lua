@@ -9,6 +9,9 @@ function Plugin.init()
 
   bind('', '<Leader>y', ':Files<CR>')
   bind('', '<Leader>t', ':GFiles<CR>')
+  bind('', '<Leader>r', ':Rg<CR>')
+  bind('', '<Leader>m', ':Marks<CR>')
+  bind('', '<Leader>j', ':Jumps<CR>')
 end
 
 return Plugin
