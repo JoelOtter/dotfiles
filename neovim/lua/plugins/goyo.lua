@@ -23,7 +23,7 @@ function Plugin.init()
     vim.opt.scrolloff = 5
     vim.opt.linebreak = false
     vim.opt.textwidth = 0
-    vim.opt.signcolumn = "number"
+    vim.opt.signcolumn = "yes"
     vim.cmd('Limelight!')
   end
 
