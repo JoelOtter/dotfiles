@@ -7,7 +7,7 @@ Plugin.dependencies = {
 function Plugin.init()
   vim.g['airline_theme'] = "base16"
   vim.g['airline_powerline_fonts'] = 1
-  vim.g['airline#extensions#tabline#enabled'] = 1
+  vim.g['airline#extensions#tabline#enabled'] = 0
   vim.g['airline#extensions#tabline#show_buffers'] = 1
   vim.g['airline#extensions#tabline#show_tabs'] = 0
   vim.g['airline#extensions#tabline#formatter'] = "unique_tail"
