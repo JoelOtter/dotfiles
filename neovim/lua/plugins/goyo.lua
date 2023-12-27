@@ -16,6 +16,7 @@ function Plugin.init()
     vim.opt.linebreak = true
     vim.opt.textwidth = 80
     vim.opt.signcolumn = "no"
+    vim.g.cmp_disabled = true
     vim.cmd('Limelight')
   end
 
@@ -24,6 +25,7 @@ function Plugin.init()
     vim.opt.linebreak = false
     vim.opt.textwidth = 0
     vim.opt.signcolumn = "yes"
+    vim.g.cmp_disabled = false
     vim.cmd('Limelight!')
   end
 

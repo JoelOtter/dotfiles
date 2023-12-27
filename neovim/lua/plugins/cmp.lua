@@ -24,6 +24,9 @@ function Plugin.config()
   end
 
   cmp.setup({
+    enabled = function()
+      return not vim.g.cmp_disabled
+    end,
     sources = {
       { name = 'path' },
       { name = 'nvim_lsp', keyword_length = 1 },
