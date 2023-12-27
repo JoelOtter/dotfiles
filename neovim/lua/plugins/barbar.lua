@@ -25,8 +25,8 @@ Plugin.config = function()
   end
 
   -- Colours - try to get it as close to airline as possible.
-  vim.api.nvim_create_autocmd("VimEnter", {
-    pattern = "*",
+  vim.api.nvim_create_autocmd("User", {
+    pattern = "AirlineAfterTheme",
     callback = function()
       copyColour('BufferCurrent', 'airline_a')
       copyColour('BufferCurrentMod', 'airline_a')
