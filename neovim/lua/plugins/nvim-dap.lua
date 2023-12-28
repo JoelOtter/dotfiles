@@ -8,6 +8,7 @@ Plugin.keys = {
   { '<Leader>bb', ':DapToggleBreakpoint<CR>' },
   { '<Leader>bc', ':DapContinue<CR>' },
   { '<Leader>bs', ':lua require"dap".step_over()<CR>' },
+  { '<Leader>bu', ':lua require"dapui".toggle()<CR>' },
 }
 
 function Plugin.config()
@@ -33,6 +34,9 @@ function Plugin.config()
       request = 'launch',
       program = function()
         return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+      end,
+      args = function()
+        return vim.split(vim.fn.input('Arguments: ', '', 'file'), ' ')
       end,
       stopOnEntry = false,
       -- Breaks on all exceptions by default, yuck.
