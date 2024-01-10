@@ -7,7 +7,7 @@ Plugin.dependencies = {
 }
 
 Plugin.keys = {
-  { '<leader>x', ':NvimTreeToggle<cr>' }
+  { '<leader>x', ':NvimTreeFindFileToggle<cr>' }
 }
 
 function Plugin.init()
