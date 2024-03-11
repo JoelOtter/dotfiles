@@ -1,0 +1,91 @@
+[colors.bright]
+black = "0x707880"
+blue = "0xc9ccd3"
+cyan = "0xec5f67"
+green = "0x2c393f"
+magenta = "0xd5dbe5"
+red = "0xea9560"
+white = "0xffffff"
+yellow = "0x37474f"
+
+[colors.cursor]
+cursor = "#CDD3DE"
+text = "#263238"
+
+[colors.normal]
+black = "0x263238"
+blue = "0x89ddff"
+cyan = "0x80cbc4"
+green = "0x8bd649"
+magenta = "0x82aaff"
+red = "0xec5f67"
+white = "0xcdd3de"
+yellow = "0xffcc00"
+
+[colors.primary]
+background = "#263238"
+foreground = "#CDD3DE"
+
+[cursor]
+blink_interval = 750
+style = "Beam"
+thickness = 0.2
+unfocused_hollow = false
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "SauceCodePro Nerd Font"
+style = "Bold"
+
+[font.bold_italic]
+family = "SauceCodePro Nerd Font"
+style = "Bold Italic"
+
+[font.italic]
+family = "SauceCodePro Nerd Font"
+style = "italic"
+
+[font.normal]
+family = "SauceCodePro Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "ClearSelection"
+key = "C"
+mode = "Vi"
+mods = "Control"
+
+[[mouse.bindings]]
+action = "Paste"
+mouse = "Right"
+
+[scrolling]
+history = 10000
+multiplier = 3
+
+[window]
+decorations = "full"
+dynamic_title = true
+opacity = 1.0
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.dimensions]
+columns = 110
+lines = 30
