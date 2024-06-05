@@ -1,10 +1,12 @@
+tap "hashicorp/tap"
+
 brew "awscli"
 brew "graphviz"
 brew "mongosh"
 brew "openvpn"
 brew "postgresql@14"
 brew "pre-commit"
-brew "terraform"
+brew "hashicorp/tap/terraform"
 
 cask "google-cloud-sdk"
 cask "loom"
