@@ -1,6 +1,7 @@
 local Plugin = { 'mfussenegger/nvim-dap' }
 
 Plugin.dependencies = {
+  { 'nvim-neotest/nvim-nio' },
   { 'rcarriga/nvim-dap-ui' }
 }
 
