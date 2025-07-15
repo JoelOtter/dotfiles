@@ -25,6 +25,8 @@ PS1="%{$fg[red]%}%n%{$fg[yellow]%}@%{$fg[magenta]%}%m%{$reset_color%}[%~] %{$fg[
 autoload -U compinit
 compinit
 
+autoload zmv
+
 setopt completeinword
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
