@@ -33,7 +33,7 @@ thickness = 0.2
 unfocused_hollow = false
 
 [font]
-size = 10.0
+size = 12.0
 
 [font.bold]
 family = "SauceCodePro Nerd Font"
