@@ -1,0 +1,34 @@
+app_launcher_cmd = "hyprlauncher"
+
+[modules]
+left = [ [ "appLauncher", "Workspaces" ] ]
+center = [ "WindowTitle" ]
+right = [ "MediaPlayer", "SystemInfo", [  "Tray", "Clock", "Privacy", "Settings" ] ]
+
+[[CustomModule]]
+name = "appLauncher"
+icon = "󱗼"
+command = "hyprlauncher"
+
+[appearance]
+style = "Islands"
+scale_factor = 1.25
+font_name = "Adwaita Sans"
+
+primary_color = "#89ddff"
+success_color = "#8bd649"
+text_color = "#cdd3de"
+workspace_colors = [ "#82aaff" ]
+special_workspace_colors = [ "#ea9560" ]
+
+[appearance.danger_color]
+base = "#ec5f67"
+
+[appearance.background_color]
+base = "#263238"
+
+[appearance.secondary_color]
+base = "#374745"
+
+[media_player]
+max_title_length = 100
