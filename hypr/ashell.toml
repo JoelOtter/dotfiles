@@ -1,9 +1,10 @@
 app_launcher_cmd = "hyprlauncher"
+log_level = "info,ashell::services::mpris=debug"
 
 [modules]
-left = [ [ "appLauncher", "Workspaces" ] ]
+left = [ [ "appLauncher", "Workspaces" ], "MediaPlayer", "CustomMedia" ]
 center = [ "WindowTitle" ]
-right = [ "MediaPlayer", "SystemInfo", [  "Tray", "Clock", "Privacy", "Settings" ] ]
+right = [ "SystemInfo", [  "Tray", "Clock", "Privacy", "Settings", "CustomNotifications" ] ]
 
 [[CustomModule]]
 name = "appLauncher"
@@ -32,3 +33,20 @@ base = "#374745"
 
 [media_player]
 max_title_length = 100
+
+[[CustomModule]]
+# The name will link the module in your left/center/right definition
+name = "CustomNotifications"
+# The default icon for this custom module
+icon = ""
+# The command that will be executed on click
+command = "swaync-client -t -sw"
+# You can optionally configure your custom module to update the UI using another command
+# The output right now follows the waybar json-style output, using the `alt` and `text` field
+# E.g. `{"text": "3", "alt": "notification"}`
+listen_cmd = "swaync-client -swb"
+# You can define behavior for the `text` and `alt` fields
+# Any number of regex can be used to change the icon based on the alt field
+icons.'dnd.*' = ""
+# Another regex can optionally show a red "alert" dot on the icon
+alert = ".*notification"
