@@ -1,0 +1,32 @@
+window#osd {
+  border-radius: 10px;
+  background: #2C393F;
+  border: 2px solid #37474F;
+}
+
+window#osd #container {
+  background: transparent;
+}
+
+window#osd image {
+  -gtk-icon-transform: scale(0.7);
+}
+
+window#osd progressbar:disabled,
+window#osd image:disabled {
+  opacity: 0.5;
+}
+
+window#osd progressbar {
+  min-height: 6px;
+  border-radius: 999px;
+  background: transparent;
+  border: none;
+}
+
+window#osd progress {
+  min-height: inherit;
+  border-radius: inherit;
+  border: none;
+  background: white;
+}
