@@ -60,10 +60,10 @@ function Plugin.config()
       bufmap('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<cr>')
 
       -- Move to the previous diagnostic
-      bufmap('n', '<Leader>[', '<cmd>lua vim.diagnostic.goto_prev()<cr>')
+      bufmap('n', '<Leader>[', '<cmd>lua vim.diagnostic.jump({count = -1, float = true})<cr>')
 
       -- Move to the next diagnostic
-      bufmap('n', '<Leader>]', '<cmd>lua vim.diagnostic.goto_next()<cr>')
+      bufmap('n', '<Leader>]', '<cmd>lua vim.diagnostic.jump({count = 1, float = true})<cr>')
 
       -- Format
       bufmap({ 'n', 'v' }, '<Leader>lf', '<cmd>lua vim.lsp.buf.format()<cr>')
