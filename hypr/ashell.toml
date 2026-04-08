@@ -19,7 +19,7 @@ font_name = "Adwaita Sans"
 primary_color = "#89ddff"
 success_color = "#8bd649"
 text_color = "#cdd3de"
-workspace_colors = [ "#82aaff" ]
+workspace_colors = [ "#82aaff", "#8bd649" ]
 special_workspace_colors = [ "#ea9560" ]
 
 [appearance.danger_color]
