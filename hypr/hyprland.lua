@@ -1,0 +1,6 @@
+require("lua/monitors")
+require("lua/programs")
+require("lua/env")
+require("lua/look")
+require("lua/windows")
+require("lua/input")
