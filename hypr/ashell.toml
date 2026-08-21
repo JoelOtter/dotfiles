@@ -4,7 +4,7 @@ log_level = "info,ashell::services::mpris=debug"
 [modules]
 left = [ [ "appLauncher", "Workspaces" ], "MediaPlayer", "CustomMedia" ]
 center = [ "WindowTitle" ]
-right = [ "SystemInfo", [  "Tray", "Clock", "Privacy", "Settings", "CustomNotifications" ] ]
+right = [ "SystemInfo", [  "Tray", "Tempo", "Privacy", "Settings", "CustomNotifications" ] ]
 
 [[CustomModule]]
 name = "appLauncher"
@@ -33,6 +33,10 @@ base = "#374745"
 
 [media_player]
 max_title_length = 100
+
+[tempo]
+weather_location = "Current"
+weather_indicator = "None"
 
 [[CustomModule]]
 # The name will link the module in your left/center/right definition
