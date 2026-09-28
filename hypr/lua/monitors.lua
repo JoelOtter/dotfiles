@@ -7,7 +7,7 @@ hl.monitor({
   cm = "srgb",
   sdrbrightness = 1.2,
   sdrsaturation = 0.98,
-  vrr = 2
+  vrr = 0
 })
 
 hl.monitor({
@@ -17,7 +17,7 @@ hl.monitor({
   scale = "1.20",
   bitdepth = 10,
   cm = "srgb",
-  vrr = 2
+  vrr = 0
 })
 
 -- Fallback
@@ -28,5 +28,5 @@ hl.monitor({
   scale = "auto",
   bitdepth = 10,
   cm = "srgb",
-  vrr = 2
+  vrr = 0
 })

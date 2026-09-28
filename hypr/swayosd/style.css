@@ -12,6 +12,11 @@ window#osd image {
   -gtk-icon-transform: scale(0.7);
 }
 
+window#osd image,
+window#osd label {
+  color: #ffffff;
+}
+
 window#osd progressbar:disabled,
 window#osd image:disabled {
   opacity: 0.5;

@@ -38,6 +38,9 @@ max_title_length = 100
 weather_location = "Current"
 weather_indicator = "None"
 
+[settings]
+lock_cmd = "loginctl lock-session"
+
 [[CustomModule]]
 # The name will link the module in your left/center/right definition
 name = "CustomNotifications"
