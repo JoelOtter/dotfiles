@@ -30,10 +30,10 @@ foreground = "#CDD3DE"
 blink_interval = 750
 style = "Beam"
 thickness = 0.2
-unfocused_hollow = false
+unfocused_hollow = true
 
 [font]
-size = 12.0
+size = 14.0
 
 [font.bold]
 family = "SauceCodePro Nerd Font"
@@ -80,11 +80,13 @@ history = 10000
 multiplier = 3
 
 [window]
-decorations = "full"
+decorations = "Buttonless"
 dynamic_title = true
 opacity = 1.0
 startup_mode = "Windowed"
 title = "Alacritty"
+dynamic_padding = true
+padding = { x = 3, y = 3 }
 
 [window.dimensions]
 columns = 110
