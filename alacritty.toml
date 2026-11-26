@@ -77,7 +77,7 @@ mouse = "Right"
 
 [scrolling]
 history = 10000
-multiplier = 3
+multiplier = 2
 
 [window]
 decorations = "Buttonless"
