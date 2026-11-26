@@ -6,6 +6,7 @@ Plugin.dependencies = {
   { 'hrsh7th/cmp-path' },
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'hrsh7th/cmp-nvim-lua' },
+  { 'hrsh7th/cmp-nvim-lsp-signature-help' },
   { 'saadparwaiz1/cmp_luasnip' },
   -- Snippets
   { 'L3MON4D3/LuaSnip' },
@@ -29,6 +30,7 @@ function Plugin.config()
     end,
     sources = {
       { name = 'path' },
+      { name = 'nvim_lsp_signature_help' },
       { name = 'nvim_lsp', keyword_length = 1 },
       { name = 'buffer',   keyword_length = 3 },
       { name = 'luasnip',  keyword_length = 2 }

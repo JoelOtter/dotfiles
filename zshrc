@@ -51,6 +51,7 @@ alias vim='nvim'
 alias vi='nvim'
 alias nj='ninja'
 alias did="vim +'r!date' +'normal o' +'normal o' +'normal O-' ~/.did.txt"
+alias gcab="growl-cmd assets bundle ../assets"
 
 function grepr {
   grep -R "$1" .
